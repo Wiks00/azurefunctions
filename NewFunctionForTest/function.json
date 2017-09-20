@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "name": "myQueueItem",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "crmleadid",
+      "connection": "ManheimAsb_RootManageSharedAccessKey_SERVICEBUS",
+      "accessRights": "Listen"
+    },
+    {
+      "type": "serviceBus",
+      "connection": "ManheimAsb_RootManageSharedAccessKey_SERVICEBUS",
+      "name": "$return",
+      "queueName": "crmlead",
+      "accessRights": "Manage",
+      "direction": "out"
+    }
+  ],
+  "disabled": true
+}
