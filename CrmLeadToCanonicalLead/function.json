@@ -5,12 +5,12 @@
       "type": "serviceBusTrigger",
       "direction": "in",
       "queueName": "crmlead",
-      "connection": "AsbManheim_RootManageSharedAccessKey_SERVICEBUS",
+      "connection": "ManheimAsb_RootManageSharedAccessKey_SERVICEBUS",
       "accessRights": "Listen"
     },
     {
       "type": "serviceBus",
-      "connection": "AsbManheim_RootManageSharedAccessKey_SERVICEBUS",
+      "connection": "ManheimAsb_RootManageSharedAccessKey_SERVICEBUS",
       "name": "$return",
       "queueName": "canonicallead",
       "accessRights": "Manage",
