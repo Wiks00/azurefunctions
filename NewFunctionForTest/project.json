@@ -1,0 +1,10 @@
+{
+  "frameworks": {
+    "net46":{
+      "dependencies": {
+        "Microsoft.Xrm.Sdk.2016" : "8.2.0.713",
+        "Microsoft.Crm.Sdk.Proxy.2015" : "7.1.0"
+      }
+    }
+   }
+}
