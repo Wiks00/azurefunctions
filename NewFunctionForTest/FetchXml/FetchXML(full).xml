@@ -1,0 +1,73 @@
+<fetch top="1" >
+  <entity name="lead" >
+    <attribute name="leadid" />
+    <attribute name="lookers_refno" />
+    <attribute name="ownerid" />
+    <attribute name="lookers_manufacturerleadid" />
+    <attribute name="customerid" />
+    <attribute name="lookers_inboundchannel" />
+    <attribute name="lookers_source" />
+    <attribute name="lookers_newused" />
+    <attribute name="lookers_modelid" />
+    <attribute name="lookers_makeid" />
+    <attribute name="lookers_derivative" />
+    <!--<attribute name="lookers_primarystockvehicleid" /> -->
+    <attribute name="lookers_vehicleregistration" />
+    <attribute name="lookers_daterequired" />
+    <attribute name="lookers_dateclosed" />
+    <attribute name="createdon" />
+    <attribute name="modifiedon" />
+    <attribute name="lookers_dealership" />
+    <!--<link-entity name="lookers_stockvehicle" alias="StockVehicle" link-type="outer" visible="false" to="lookers_primarystockvehicleid" from="lookers_stockvehicleid" >
+      <attribute name="lookers_registrationnumber" />
+    </link-entity> -->
+    <link-entity name="lookers_partexchangevehicle" alias="PartExchangeVehicle" link-type="outer" visible="false" to="leadid" from="lookers_leadid" >
+      <attribute name="lookers_makeid" />
+      <attribute name="lookers_modelid" />
+      <attribute name="lookers_derivativeid" />
+      <attribute name="lookers_currentodometer" />
+      <attribute name="lookers_registrationnumber" />
+      <attribute name="createdon" />
+      <attribute name="modifiedon" />
+      <link-entity name="lookers_derivative" alias="DerivativePartExV" link-type="outer" visible="false" to="lookers_derivativeid" from="lookers_derivativeid" >
+        <attribute name="lookers_fueltypeid" />
+      </link-entity>
+    </link-entity>
+    <attribute name="lookers_title" />
+    <attribute name="telephone2" />
+    <attribute name="telephone1" />
+    <attribute name="mobilephone" />
+    <attribute name="lookers_address1housenumber" />
+    <attribute name="lookers_address1housename" />
+    <attribute name="lastname" />
+    <attribute name="firstname" />
+    <attribute name="emailaddress1" />
+    <attribute name="address1_postalcode" />
+    <attribute name="address1_line3" />
+    <attribute name="address1_line2" />
+    <attribute name="address1_line1" />
+    <attribute name="address1_city" />
+    <attribute name="preferredcontactmethodcode" />
+    <attribute name="lookers_calltime" />
+    <attribute name="lookers_leadmessage" />
+    <attribute name="lookers_daterequired" />
+    <link-entity name="lookers_derivative" alias="derivative" link-type="outer" visible="false" to="lookers_derivative" from="lookers_derivativeid" >
+      <attribute name="lookers_fueltypeid" />
+    </link-entity>
+    <link-entity name="lookers_dealership" alias="Dealership" link-type="outer" visible="false" to="lookers_dealership" from="lookers_dealershipid" >
+      <attribute name="lookers_fastrackbranchid" />
+    </link-entity>
+    <link-entity name="annotation" to="leadid" from="objectid" link-type="outer" visible="false" >
+      <attribute name="notetext" />
+    </link-entity>
+    <link-entity name="contact" to="customerid" from="contactid" link-type="outer" visible="false" >
+      <attribute name="fax" />
+    </link-entity>
+    <filter type="and" >
+      <condition attribute="statecode" operator="ne" value="1" />
+    </filter>
+	<filter type="and" >
+      <condition attribute="leadid" operator="eq" value="" />
+    </filter>
+  </entity>
+</fetch>

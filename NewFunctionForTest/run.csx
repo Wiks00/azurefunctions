@@ -10,19 +10,18 @@ static IOrganizationService CRM;
 
 public static string Run(string myQueueItem, TraceWriter log)
 {
-    ConnectToCRM("MDMTester@lookersmotorgroup.onmicrosoft.com", "L00kersTester",
-"https://lookers-sit-unstable.api.crm4.dynamics.com/XRMServices/2011/Organization.svc");
+    ConnectToCRM("MDMTester@lookersmotorgroup.onmicrosoft.com", "L00kersTester","https://lookers-sit-unstable.api.crm4.dynamics.com/XRMServices/2011/Organization.svc");
 
     var doc = new XmlDocument();
-    doc.Load("..\\..\\FetchXML(full).xml");
+    doc.Load(@"D:\home\site\wwwroot\CrmLeadToCanonicalLead\FetchXML\FetchXML(full).xml");
 
-    doc.SelectNodes("//entity/filter/condition[@attribute='leadid']/@value").Item(0).Value = "{F3AFDAD1-5E65-E711-810C-70106FAAC331}";
+    doc.SelectNodes("//entity/filter/condition[@attribute='leadid']/@value").Item(0).Value = (string)Object.Parse(myQueueItem)["leadid"];
 
     ExecuteFetchRequest efr = new ExecuteFetchRequest();
     efr.FetchXml = doc.InnerXml;
     var efresp = CRM.Execute(efr);
 
-    return "{\"leadid\":\"111\"}";
+    return efresp.Results.Values.First();
 }
 
 public static void ConnectToCRM(string UserName, string Password, string SoapOrgServiceUri)
