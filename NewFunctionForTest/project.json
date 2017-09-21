@@ -1,11 +1,11 @@
 {
   "frameworks": {
-    "net47":{
+    "net46": {
       "dependencies": {
-        "Microsoft.CrmSdk.XrmTooling.CoreAssembly": "8.2.0.5",
         "Microsoft.Xrm.Sdk.2015": "7.1.0.1085",
-        "Microsoft.Crm.Sdk.Proxy.2015": "7.1.0"
+        "Microsoft.Crm.Sdk.Proxy.2015": "7.1.0",
+        "Microsoft.Xrm.Client.2015": "7.0.1"
       }
     }
-   }
+  }
 }
