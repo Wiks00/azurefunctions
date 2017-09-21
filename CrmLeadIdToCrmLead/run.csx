@@ -28,6 +28,8 @@ public static string Run(string myQueueItem, TraceWriter log)
         doc.SelectNodes("//entity/filter/condition[@attribute='leadid']/@value").Item(0).Value = JObject.Parse(myQueueItem)["leadid"].ToString();
 
         efresp = CRM.Execute(new ExecuteFetchRequest { FetchXml = doc.InnerXml });
+
+        transaction.Complete();
     }
 
     return efresp.Results.Values.First().ToString();
