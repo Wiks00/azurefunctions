@@ -2,8 +2,8 @@
   "frameworks": {
     "net47":{
       "dependencies": {
-        "Microsoft.Crm.Sdk.Proxy.2015": "7.1.0",
-        "Microsoft.Xrm.Sdk.2015": "7.1.0.1085"
+        "Microsoft.Xrm.Sdk.2015": "7.1.0.1085",
+        "Microsoft.Crm.Sdk.Proxy.2015": "7.1.0"
       }
     }
    }
