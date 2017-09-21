@@ -19,7 +19,7 @@ public static string Run(string myQueueItem, TraceWriter log)
     ConnectToCRM("MDMTester@lookersmotorgroup.onmicrosoft.com", "L00kersTester", "https://lookers-sit-unstable.api.crm4.dynamics.com/XRMServices/2011/Organization.svc");
 
     var doc = new XmlDocument();
-    doc.Load(@"D:\home\site\wwwroot\NewFunctionForTest\FetchXML\FetchXML(full).xml");
+    doc.Load(@"D:\home\site\wwwroot\CrmLeadIdToCrmLead\FetchXML\FetchXML(full).xml");
 
     OrganizationResponse efresp = new OrganizationResponse();
 
