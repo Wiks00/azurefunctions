@@ -4,7 +4,8 @@
       "dependencies": {
         "Microsoft.Xrm.Sdk.2015": "7.1.0.1085",
         "Microsoft.Crm.Sdk.Proxy.2015": "7.1.0",
-        "Microsoft.Xrm.Client.2015": "7.0.1"
+        "Microsoft.Xrm.Client.2015": "7.0.1",
+        "Microsoft.IdentityModel": "6.1.7600.16394"
       }
     }
   }
