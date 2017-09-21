@@ -1,5 +1,7 @@
 #r "System.ServiceModel"
 #r "Newtonsoft.Json"
+#r "System.Transactions"
+#r "Microsoft.Crm.Sdk.Proxy"
 
 using System;
 using System.Linq;
@@ -9,6 +11,7 @@ using Microsoft.Crm.Sdk.Messages;
 using System.ServiceModel.Description;
 using Newtonsoft.Json.Linq;
 using System.Xml;
+using System.Transactions;
 
 static IOrganizationService CRM;
 
@@ -21,12 +24,19 @@ public static string Run(string myQueueItem, TraceWriter log)
 
     doc.SelectNodes("//entity/filter/condition[@attribute='leadid']/@value").Item(0).Value = JObject.Parse(myQueueItem)["leadid"].ToString();
 
-    var efresp = CRM.Execute(new ExecuteFetchRequest { FetchXml = doc.InnerXml });
+    OrganizationResponse efresp = new OrganizationResponse();
+
+    using (var transaction = new TransactionScope())
+    {
+        efresp = CRM.Execute(new ExecuteFetchRequest { FetchXml = doc.InnerXml });
+
+        transaction.Complete();
+    }
 
     return efresp.Results.Values.First().ToString();
 }
 
-public static void ConnectToCRM(string UserName, string Password, string SoapOrgServiceUri)
+private static void ConnectToCRM(string UserName, string Password, string SoapOrgServiceUri)
 {
     ClientCredentials credentials = new ClientCredentials();
     credentials.UserName.UserName = UserName;
