@@ -1,7 +1,6 @@
 #r "System.ServiceModel"
 #r "Newtonsoft.Json"
 #r "System.Transactions"
-#r "Microsoft.Crm.Sdk.Proxy.dll"
 
 using System;
 using System.Linq;
