@@ -1,7 +1,7 @@
 {
   "bindings": [
     {
-      "name": "crmJsonLead",
+      "name": "crmLead",
       "type": "serviceBusTrigger",
       "direction": "in",
       "queueName": "crmlead",
