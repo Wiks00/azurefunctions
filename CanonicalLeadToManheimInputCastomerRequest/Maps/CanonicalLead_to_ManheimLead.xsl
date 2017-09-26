@@ -395,7 +395,8 @@ public string GetXRefData(string dealerName, string valueXRef)
                 if (contentStream != null)
                 {
                     System.IO.StreamReader reader = new System.IO.StreamReader(contentStream);
-                    return reader.ReadToEnd();
+                    string result = reader.ReadToEnd();
+                    return result.Substring(1, result.Length -2);
                 }
             }
 
