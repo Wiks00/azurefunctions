@@ -25,6 +25,9 @@ public static string Run(string crmLead, TraceWriter log)
     XmlDocument xmlRawLead = new XmlDocument();
     xmlRawLead.LoadXml(crmLead);
 
+    xml.Schemas.Add("", @"D:\home\site\wwwroot\CrmLeadToCanonicalLead\Schemas\LeadFromCrm.xsd");
+    xml.Validate(null);
+
     /*using (MemoryStream memoryStream = new MemoryStream())
     {
         serializer.Serialize(memoryStream, crmLead, ns);

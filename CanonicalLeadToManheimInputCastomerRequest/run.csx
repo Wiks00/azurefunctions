@@ -10,7 +10,7 @@ public static string Run(HttpRequestMessage req, TraceWriter log)
 
     XslCompiledTransform xslt = new XslCompiledTransform();
 
-    xslt.Load(@"D:\home\site\wwwroot\CanonicalLeadToManheimInputCastomerRequest\Maps\map2.xsl", new XsltSettings(true, true), null);
+    xslt.Load(@"D:\home\site\wwwroot\CanonicalLeadToManheimInputCastomerRequest\Maps\CanonicalLead_to_ManheimLead.xsl", new XsltSettings(true, true), null);
 
     using (MemoryStream memoryStream = new MemoryStream())
     {

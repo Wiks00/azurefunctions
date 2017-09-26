@@ -1,0 +1,277 @@
+﻿<xs:schema xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" id="NewDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo>
+      <schemaInfo root_reference="resultset" xmlns="http://schemas.microsoft.com/BizTalk/2003" />
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="resultset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="result">
+          <xs:complexType>
+            <xs:all>
+              <xs:element minOccurs="0" name="leadid" type="xs:string" />
+              <xs:element minOccurs="0" name="lookers_refno" type="xs:string" />
+              <xs:element minOccurs="0" name="lookers_manufacturerleadid" type="xs:string" />
+              <xs:element minOccurs="0" name="lookers_vehicleregistration" type="xs:string" />
+              <xs:element minOccurs="0" name="telephone2" type="xs:string" />
+              <xs:element minOccurs="0" name="telephone1" type="xs:string" />
+              <xs:element minOccurs="0" name="mobilephone" type="xs:string" />
+              <xs:element minOccurs="0" name="lookers_address1housenumber" type="xs:string" />
+              <xs:element minOccurs="0" name="lookers_address1housename" type="xs:string" />
+              <xs:element minOccurs="0" name="lastname" type="xs:string" />
+              <xs:element minOccurs="0" name="firstname" type="xs:string" />
+              <xs:element minOccurs="0" name="emailaddress1" type="xs:string" />
+              <xs:element minOccurs="0" name="address1_postalcode" type="xs:string" />
+              <xs:element minOccurs="0" name="address1_line3" type="xs:string" />
+              <xs:element minOccurs="0" name="address1_line2" type="xs:string" />
+              <xs:element minOccurs="0" name="address1_line1" type="xs:string" />
+              <xs:element minOccurs="0" name="address1_city" type="xs:string" />
+              <xs:element minOccurs="0" name="lookers_leadmessage" type="xs:string" />
+              <xs:element minOccurs="0" name="StockVehicle.lookers_registrationnumber" type="xs:string" />
+              <xs:element minOccurs="0" name="PartExchangeVehicle.lookers_registrationnumber" type="xs:string" />
+              <xs:element minOccurs="0" name="PartExchangeVehicle.lookers_engineno" type="xs:string" />
+              <xs:element minOccurs="0" name="Dealership.lookers_fastrackbranchid" type="xs:string" />
+              <xs:element minOccurs="0" name="leadid.notetext" type="xs:string" />
+              <xs:element minOccurs="0" name="customerid.fax" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="1" name="ownerid" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="ownerid_Text" msdata:Ordinal="4">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="yomi" type="xs:string" />
+                      <xs:attribute name="type" type="xs:string" />
+                      <xs:attribute name="dsc" type="xs:string" />
+                      <xs:attribute name="name" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="customerid" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="customerid_Text" msdata:Ordinal="4">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="type" type="xs:string" />
+                      <xs:attribute name="dsc" type="xs:string" />
+                      <xs:attribute name="yomi" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="lookers_inboundchannel" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="lookers_inboundchannel_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="formattedvalue" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="lookers_source" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="lookers_source_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="formattedvalue" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="lookers_newused" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="lookers_newused_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="formattedvalue" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="lookers_modelid" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="lookers_modelid_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="type" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="lookers_makeid" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="lookers_makeid_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="type" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="lookers_derivative" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="lookers_derivative_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="type" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="lookers_primarystockvehicleid" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="lookers_primarystockvehicleid_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="type" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="createdon" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="createdon_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="date" type="xs:string" />
+                      <xs:attribute name="time" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="modifiedon" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="modifiedon_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="date" type="xs:string" />
+                      <xs:attribute name="time" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="lookers_dealership" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="lookers_dealership_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="type" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="lookers_title" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="lookers_title_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="formattedvalue" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="preferredcontactmethodcode" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="preferredcontactmethodcode_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="formattedvalue" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="lookers_calltime" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="lookers_calltime_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="formattedvalue" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="PartExchangeVehicle.lookers_makeid" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="PartExchangeVehicle.lookers_makeid_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="type" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="PartExchangeVehicle.lookers_modelid" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="PartExchangeVehicle.lookers_modelid_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="type" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="PartExchangeVehicle.lookers_derivativeid" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="PartExchangeVehicle.lookers_derivativeid_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="type" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="PartExchangeVehicle.lookers_currentodometer" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="PartExchangeVehicle.lookers_currentodometer_Text" msdata:Ordinal="1">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="formattedvalue" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="PartExchangeVehicle.createdon" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="PartExchangeVehicle.createdon_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="date" type="xs:string" />
+                      <xs:attribute name="time" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="PartExchangeVehicle.modifiedon" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="PartExchangeVehicle.modifiedon_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="date" type="xs:string" />
+                      <xs:attribute name="time" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="DerivativePartExV.lookers_fueltypeid" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="DerivativePartExV.lookers_fueltypeid_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="type" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="1" name="derivative.lookers_fueltypeid" nillable="true">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="derivative.lookers_fueltypeid_Text" msdata:Ordinal="2">
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="name" type="xs:string" />
+                      <xs:attribute name="type" type="xs:string" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="morerecords" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
