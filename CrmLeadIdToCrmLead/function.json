@@ -1,19 +1,24 @@
 {
   "bindings": [
     {
-      "name": "myQueueItem",
-      "type": "serviceBusTrigger",
-      "direction": "in",
-      "queueName": "crmleadid",
-      "connection": "ManheimAsb_RootManageSharedAccessKey_SERVICEBUS",
-      "accessRights": "Listen"
+      "type": "httpTrigger",
+      "name": "req",
+      "authLevel": "function",
+      "methods": [
+        "get",
+        "post",
+        "delete",
+        "head",
+        "patch",
+        "put",
+        "options",
+        "trace"
+      ],
+      "direction": "in"
     },
     {
-      "type": "serviceBus",
-      "connection": "ManheimAsb_RootManageSharedAccessKey_SERVICEBUS",
+      "type": "http",
       "name": "$return",
-      "queueName": "crmlead",
-      "accessRights": "Manage",
       "direction": "out"
     }
   ],

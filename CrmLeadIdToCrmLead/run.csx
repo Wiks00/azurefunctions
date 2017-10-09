@@ -3,6 +3,7 @@
 #r "Newtonsoft.Json"
 
 using System;
+using System.Net;
 using System.Linq;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Client;
@@ -14,25 +15,32 @@ using System.Xml;
 
 static IOrganizationService CRM;
 
-public static string Run(string myQueueItem, TraceWriter log)
+public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log)
 {
-    ConnectToCRM("MDMTester@lookersmotorgroup.onmicrosoft.com", "L00kersTester", "https://lookers-sit-unstable.api.crm4.dynamics.com/XRMServices/2011/Organization.svc");
-
-    var doc = new XmlDocument();
-    doc.Load(@"D:\home\site\wwwroot\CrmLeadIdToCrmLead\FetchXML\FetchXML(full).xml");
-
-    OrganizationResponse efresp = new OrganizationResponse();
-
-    using (var transaction = new TransactionScope())
+    try
     {
-        doc.SelectNodes("//entity/filter/condition[@attribute='leadid']/@value").Item(0).Value = JObject.Parse(myQueueItem)["leadid"].ToString();
+        ConnectToCRM("MDMTester@lookersmotorgroup.onmicrosoft.com", "L00kersTester", "https://lookers-sit-unstable.api.crm4.dynamics.com/XRMServices/2011/Organization.svc");
 
-        efresp = CRM.Execute(new ExecuteFetchRequest { FetchXml = doc.InnerXml });
+        var doc = new XmlDocument();
+        doc.Load(@"D:\home\site\wwwroot\CrmLeadIdToCrmLead\FetchXML\FetchXML(full).xml");
 
-        transaction.Complete();
+        OrganizationResponse efresp = new OrganizationResponse();
+
+        using (var transaction = new TransactionScope())
+        {
+            doc.SelectNodes("//entity/filter/condition[@attribute='leadid']/@value").Item(0).Value = JObject.Parse(req.Content.ReadAsStringAsync().Result)["leadid"].ToString();
+
+            efresp = CRM.Execute(new ExecuteFetchRequest { FetchXml = doc.InnerXml });
+
+            transaction.Complete();
+        }
+
+        return req.CreateResponse(HttpStatusCode.OK, efresp.Results.Values.First().ToString());
     }
-
-    return efresp.Results.Values.First().ToString();
+    catch (Exception ex)
+    {
+        return req.CreateResponse(HttpStatusCode.InternalServerError, "{\"type\": \"" + ex.GetType() + "\",\"message\": \"" + ex.Message + "\"}");
+    }
 }
 
 public static void ConnectToCRM(string UserName, string Password, string SoapOrgServiceUri)
