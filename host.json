@@ -1,1 +1,4 @@
-{"swagger":{"enabled":true}}
+{
+  "swagger": { "enabled": true },
+  "watchDirectories": [ "Shared" ]
+}
